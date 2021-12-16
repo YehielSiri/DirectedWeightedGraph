@@ -2,6 +2,8 @@ import java.io.File;
 
 import api.DirectedWeightedGraph;
 import api.DirectedWeightedGraphAlgorithms;
+import api.JsonHandler;
+import api.Json_Handler;
 
 /**
  * Author: Yehiel Siri
@@ -36,6 +38,7 @@ public class Ex2 {
      */
     public static DirectedWeightedGraph getGrapg(String json_file) {
         DirectedWeightedGraph ans = null;
+        JsonHandler.JsonDeserializer(json_file, ans);
         return ans;
     }
     /**
