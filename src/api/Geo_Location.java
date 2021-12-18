@@ -10,6 +10,13 @@ public class Geo_Location implements GeoLocation {
 	private double x, y, z;
 
 	/**
+	 * Default constructor
+	 */
+	public Geo_Location() {
+		this.x = this.y = this.z = 0;
+	}
+
+	/**
 	 * Constructor
 	 *
 	 * @param (double) x
@@ -25,15 +32,15 @@ public class Geo_Location implements GeoLocation {
 	/**
 	 * Copy constructor
 	 *
-	 * @param other
+	 * @param geoLocation
 	 */
-	public Geo_Location(Geo_Location other) {
+	public Geo_Location(GeoLocation geoLocation) {
 //		this.x = other.x();
 //		this.y = other.y();
 //		this.z = other.z();
 		
 //		The right programming is as below but there is a problem with final or something
-		new Geo_Location(other.x(), other.y(), other.z());
+		new Geo_Location(geoLocation.x(), geoLocation.y(), geoLocation.z());
 	}
 
 	@Override
@@ -91,7 +98,7 @@ public class Geo_Location implements GeoLocation {
 	}
 	
 	/**
-	 * Equivalence checking function between this and other:
+	 * Equivalence checking function between this and other geographic locations:
 	 * Two points in space, two locations, are equal iff x1=x2 & y1=y2 & z1=z2
 	 * 
 	 * @return boolean
