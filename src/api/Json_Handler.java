@@ -10,8 +10,8 @@ import java.io.File;
 import java.io.FileReader;
 
 /**
- * Author: Yehiel Siri
- * Date: 06/12/2021
+ * @author Yehiel Siri
+ * @since  06/12/2021
  * 
  * A Json type files handle class
  */

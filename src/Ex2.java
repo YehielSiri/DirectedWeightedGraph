@@ -5,8 +5,8 @@ import api.DirectedWeightedGraphAlgorithms;
 import api.Json_Handler;
 
 /**
- * Author: Yehiel Siri
- * Date: 06/12/2021
+ * @author Yehiel Siri
+ * @since  06/12/2021
  * 
  * This class is the main class for Ex2 - your implementation will be tested using this class.
  */
