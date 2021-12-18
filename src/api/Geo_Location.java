@@ -7,7 +7,7 @@ package api;
  * A geographic location representation class-object
  */
 public class Geo_Location implements GeoLocation {
-	private final double x, y, z;
+	private double x, y, z;
 
 	/**
 	 * Constructor
@@ -28,12 +28,12 @@ public class Geo_Location implements GeoLocation {
 	 * @param other
 	 */
 	public Geo_Location(Geo_Location other) {
-		this.x = other.x();
-		this.y = other.y();
-		this.z = other.z();
+//		this.x = other.x();
+//		this.y = other.y();
+//		this.z = other.z();
 		
 //		The right programming is as below but there is a problem with final or something
-//		Geo_Location(other.x(), other.y(), other.z());
+		new Geo_Location(other.x(), other.y(), other.z());
 	}
 
 	@Override
@@ -49,6 +49,18 @@ public class Geo_Location implements GeoLocation {
 	@Override
 	public double z() {
 		return this.z;
+	}
+
+	public void setX(double x) {
+		this.x = x;
+	}
+
+	public void setY(double y) {
+		this.y = y;
+	}
+
+	public void setZ(double z) {
+		this.z = z;
 	}
 
 	/**
