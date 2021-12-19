@@ -30,13 +30,13 @@ public interface DirectedWeightedGraph {
 	 * @param n
 	 */
 	public void addNode(NodeData n);
-/**
- * Connects an edge with weight w between node src to node dest.
- * * Note: this method should run in O(1) time.
- * @param src - the source of the edge.
- * @param dest - the destination of the edge.
- * @param w - positive weight representing the cost (aka time, price, etc) between src-->dest.
- */
+	/**
+	 * Connects an edge with weight w between node src to node dest.
+	 * * Note: this method should run in O(1) time.
+	 * @param src - the source of the edge.
+	 * @param dest - the destination of the edge.
+	 * @param w - positive weight representing the cost (aka time, price, etc) between src-->dest.
+	 */
 	public void connect(int src, int dest, double w);
 	/**
 	 * This method returns an Iterator for the
@@ -85,9 +85,9 @@ public interface DirectedWeightedGraph {
 	 * @return
 	 */
 	public int edgeSize();
-/**
- * Returns the Mode Count - for testing changes in the graph.
- * @return
- */
+	/**
+	 * Returns the Mode Count - for testing changes in the graph.
+	 * @return
+	 */
 	public int getMC();
 }

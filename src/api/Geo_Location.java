@@ -35,11 +35,11 @@ public class Geo_Location implements GeoLocation {
 	 * @param geoLocation
 	 */
 	public Geo_Location(GeoLocation geoLocation) {
-//		this.x = other.x();
-//		this.y = other.y();
-//		this.z = other.z();
-		
-//		The right programming is as below but there is a problem with final or something
+		//		this.x = other.x();
+		//		this.y = other.y();
+		//		this.z = other.z();
+
+		//		The right programming is as below but there is a problem with final or something
 		new Geo_Location(geoLocation.x(), geoLocation.y(), geoLocation.z());
 	}
 
@@ -96,7 +96,7 @@ public class Geo_Location implements GeoLocation {
 	public String toString() {
 		return "(" + x() + ", " + y() + ", " + z() + ")";
 	}
-	
+
 	/**
 	 * Equivalence checking function between this and other geographic locations:
 	 * Two points in space, two locations, are equal iff x1=x2 & y1=y2 & z1=z2

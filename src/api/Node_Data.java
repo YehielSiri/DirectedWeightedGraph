@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /**
  * @author Yehiel Siri
- * @since 16/12/2021
+ * @since 06/12/2021
  * 
  * A directed weighted graph node representation class-object.
  * Represents set of operations applicable on a node (vertex) in 
@@ -15,7 +15,7 @@ public class Node_Data implements NodeData {
 	private final int key;								//the node ID
 	private transient double weight = Double.MAX_VALUE;
 	private transient String info = "Unvisited";
-	private transient int tag = -1;
+	private transient int tag = -1;						//Represent the color
 
 	private HashMap<Integer,EdgeData> edges;
 	private HashMap<Integer,Integer> neighbors;
@@ -118,7 +118,7 @@ public class Node_Data implements NodeData {
 	public String toString() {
 		return "{Position:" + this.location + ", ID:" + this.key + ", Weight:" + this.weight + '}';
 	}
-	
+
 	/**
 	 * Equivalence checking function between this and other nodes:
 	 * Two nodes are equal iff the all five are equal to their counterparts in 
@@ -128,9 +128,9 @@ public class Node_Data implements NodeData {
 	 * @return boolean
 	 */
 	public boolean isEqual(Node_Data other) {
-//		return (this.location.isEqual((Geo_Location) other.getLocation()) 
-//				&& this.key == other.getKey()) && (this.weight == other.getWeight()) 
-//				&& this.edges.equals(other.getEdges()) && (this.neighbors.equals(other.getNeighbors()) );
+		//		return (this.location.isEqual((Geo_Location) other.getLocation()) 
+		//				&& this.key == other.getKey()) && (this.weight == other.getWeight()) 
+		//				&& this.edges.equals(other.getEdges()) && (this.neighbors.equals(other.getNeighbors()) );
 		return this.key == other.getKey();
 	}
 

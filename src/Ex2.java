@@ -2,6 +2,7 @@ import java.io.File;
 
 import api.DirectedWeightedGraph;
 import api.DirectedWeightedGraphAlgorithms;
+import api.Directed_Weighted_Graph;
 import api.Json_Handler;
 
 /**
@@ -11,7 +12,7 @@ import api.Json_Handler;
  * This class is the main class for Ex2 - your implementation will be tested using this class.
  */
 public class Ex2 {
-	
+
 	public static void main(String[] args) {
 		try {
 			try {
@@ -29,38 +30,39 @@ public class Ex2 {
 			System.out.println("Please try again after inserting!");
 		}
 	}
-	
-    /**
-     * This static function will be used to test your implementation
-     * @param json_file - a json file (e.g., G1.json - G3.gson)
-     * @return
-     */
-    public static DirectedWeightedGraph getGrapg(String json_file) {
-        DirectedWeightedGraph ans = null;
-        Json_Handler.JsonDeserializer(json_file, ans);
-        return ans;
-    }
-    /**
-     * This static function will be used to test your implementation
-     * @param json_file - a json file (e.g., G1.json - G3.gson)
-     * @return
-     */
-    public static DirectedWeightedGraphAlgorithms getGrapgAlgo(String json_file) {
-        DirectedWeightedGraphAlgorithms ans = null;
-        // ****** Add your code here ******
-        //
-        // ********************************
-        return ans;
-    }
-    /**
-     * This static function will run your GUI using the json file.
-     * @param json_file - a json file (e.g., G1.json - G3.gson)
-     *
-     */
-    public static void runGUI(String json_file) {
-        DirectedWeightedGraphAlgorithms alg = getGrapgAlgo(json_file);
-        // ****** Add your code here ******
-        //
-        // ********************************
-    }
+
+	/**
+	 * This static function will be used to test your implementation
+	 * @param json_file - a json file (e.g., G1.json - G3.gson)
+	 * @return
+	 */
+	public static DirectedWeightedGraph getGrapg(String json_file) {
+		DirectedWeightedGraph ans = null;
+		ans = new Directed_Weighted_Graph(json_file);
+//		Json_Handler.JsonDeserializer(json_file, (Directed_Weighted_Graph)ans);
+		return ans;
+	}
+	/**
+	 * This static function will be used to test your implementation
+	 * @param json_file - a json file (e.g., G1.json - G3.gson)
+	 * @return
+	 */
+	public static DirectedWeightedGraphAlgorithms getGrapgAlgo(String json_file) {
+		DirectedWeightedGraphAlgorithms ans = null;
+		// ****** Add your code here ******
+		//
+		// ********************************
+		return ans;
+	}
+	/**
+	 * This static function will run your GUI using the json file.
+	 * @param json_file - a json file (e.g., G1.json - G3.gson)
+	 *
+	 */
+	public static void runGUI(String json_file) {
+		DirectedWeightedGraphAlgorithms alg = getGrapgAlgo(json_file);
+		// ****** Add your code here ******
+		//
+		// ********************************
+	}
 }
