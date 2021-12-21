@@ -89,7 +89,8 @@ public class Edge_Data implements EdgeData, Serializable {
 
 	@Override
 	public String toString() {
-		return "{ Source = " + this.getSrc() + ", Weight = " + this.getWeight() + ", Destination = " + this.getDest() + " }";
+//		return "{ Source = " + this.getSrc() + ", Weight = " + this.getWeight() + ", Destination = " + this.getDest() + " }";
+		return this.getSrc() + "-" + this.getDest();
 	}
 	
 	/**
