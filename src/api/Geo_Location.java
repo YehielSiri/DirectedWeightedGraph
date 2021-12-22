@@ -43,6 +43,14 @@ public class Geo_Location implements GeoLocation {
 		new Geo_Location(geoLocation.x(), geoLocation.y(), geoLocation.z());
 	}
 
+	public Geo_Location(String string) {
+		String[] sSplited = string.split(",");
+		
+		this.x = Double.parseDouble(sSplited[0]);
+		this.y = Double.parseDouble(sSplited[1]);
+		this.z = Double.parseDouble(sSplited[2]);
+	}
+
 	@Override
 	public double x() {
 		return this.x;
