@@ -3,6 +3,7 @@ import java.io.File;
 import api.DirectedWeightedGraph;
 import api.DirectedWeightedGraphAlgorithms;
 import api.Directed_Weighted_Graph;
+import api.Directed_Weighted_Graph_Algorithms;
 import api.Json_Handler;
 
 /**
@@ -38,7 +39,16 @@ public class Ex2 {
 	 */
 	public static DirectedWeightedGraph getGrapg(String json_file) {
 		DirectedWeightedGraph ans = null;
+		
+//		My third implementation version - the simplest way:
 		ans = new Directed_Weighted_Graph(json_file);
+		
+//		My second implementation version - a try to implement according to the prophesor interface meaning:
+//		Directed_Weighted_Graph_Algorithms handler = new Directed_Weighted_Graph_Algorithms();
+//		handler.load(json_file);
+//		ans = handler.getGraph();
+		
+//		My first implementation version - a little complicated than the third one:
 //		Json_Handler.JsonDeserializer(json_file, (Directed_Weighted_Graph)ans);
 		return ans;
 	}
@@ -49,9 +59,8 @@ public class Ex2 {
 	 */
 	public static DirectedWeightedGraphAlgorithms getGrapgAlgo(String json_file) {
 		DirectedWeightedGraphAlgorithms ans = null;
-		// ****** Add your code here ******
-		//
-		// ********************************
+		ans = new Directed_Weighted_Graph_Algorithms();
+		ans.load(json_file);
 		return ans;
 	}
 	/**

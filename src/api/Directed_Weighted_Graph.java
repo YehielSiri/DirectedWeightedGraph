@@ -305,19 +305,19 @@ public class Directed_Weighted_Graph implements DirectedWeightedGraph {
 		return this.MC;
 	}
 
-	private int getNodesCounter() {
+	public int getNodesCounter() {
 		return this.nodesCounter;
 	}
 
-	private int getEdgesCounter() {
+	public int getEdgesCounter() {
 		return this.edgesCounter;
 	}
 
-	private HashMap<Integer,NodeData> getNodes() {
+	public HashMap<Integer,NodeData> getNodes() {
 		return this.nodes;
 	}
 
-	private HashMap<String, EdgeData> getEdges() {
+	public HashMap<String, EdgeData> getEdges() {
 		return this.edges;
 	}
 
