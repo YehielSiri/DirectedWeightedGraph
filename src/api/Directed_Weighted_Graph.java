@@ -53,10 +53,10 @@ public class Directed_Weighted_Graph implements DirectedWeightedGraph {
 	 */
 	public Directed_Weighted_Graph(Directed_Weighted_Graph other) {
 		this.MC = other.getMC();
-		this.nodes = new HashMap<>(other.getNodes());
-		//		this.nodes = cloneMap(other.getNodes());
-		this.edges = new HashMap<>(other.getEdges());
-		//		this.edges = cloneMap(other.getEdges());
+//		this.nodes = new HashMap<>(other.getNodes());
+		this.nodes = cloneMap(other.getNodes());
+//		this.edges = new HashMap<>(other.getEdges());
+		this.edges = cloneMap(other.getEdges());
 		this.nodesCounter = other.getNodesCounter();
 		this.edgesCounter = other.getEdgesCounter();
 	}

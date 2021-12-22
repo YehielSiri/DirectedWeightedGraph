@@ -1,11 +1,11 @@
 package api;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.Vector;
 
 public class Directed_Weighted_Graph_Algorithms implements DirectedWeightedGraphAlgorithms {
 	private Directed_Weighted_Graph graph;
@@ -76,10 +76,47 @@ public class Directed_Weighted_Graph_Algorithms implements DirectedWeightedGraph
 		return ans;
 	}
 
+	/**
+	 * 
+	 * 
+	 * @param cities
+	 * @return ans - List<NodeData>
+	 */
 	@Override
 	public List<NodeData> tsp(List<NodeData> cities) {
-		// TODO Auto-generated method stub
-		return null;
+		if (cities.size() == 0)
+			return null;
+		List<NodeData> ans = new LinkedList<>();
+		List<NodeData> temp = new ArrayList<>(cities);
+		NodeData p = temp.remove(0);
+		ans.add(p);
+		while (temp.size() >= 1) {
+			int key = p.getKey();
+			Dijkstra d = new Dijkstra(this.graph, key);
+			HashMap<Integer, Double> dist = d.getDists();
+			NodeData t = null;
+			double min = (double) Integer.MAX_VALUE;
+			for (NodeData n : temp) {
+				if (dist.get(n.getKey()) < min) {
+					min = dist.get(n.getKey());
+					t = n;
+				}
+			}
+			if (t == null)
+				return null;
+			List<NodeData> path = new LinkedList<>();
+			HashMap<Integer, NodeData> prev = d.getPrevs();
+			NodeData c = t;
+			if (prev.get(t.getKey()) != null || t.getKey() == key)
+				while (prev.get(t.getKey()) != null) {
+					path.add(0, t);
+					t = prev.get(t.getKey());
+				}
+			p = c;
+			temp.remove(c);
+			ans.addAll(path);
+		}
+		return ans;
 	}
 
 	@Override
