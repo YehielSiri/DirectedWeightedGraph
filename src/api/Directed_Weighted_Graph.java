@@ -218,7 +218,7 @@ public class Directed_Weighted_Graph implements DirectedWeightedGraph {
 	public Iterator<EdgeData> edgeIter(int node_id) {
 		return new Iterator<EdgeData>() {
 			@SuppressWarnings("unlikely-arg-type")
-			private final Iterator<EdgeData> it = ( (Node_Data)(edges.get(node_id)) ).getEdges().values().iterator();
+			private final Iterator<EdgeData> it = ( (Node_Data)(nodes.get(node_id)) ).getEdges().values().iterator();
 			private final int verify = MC;
 
 			@Override
